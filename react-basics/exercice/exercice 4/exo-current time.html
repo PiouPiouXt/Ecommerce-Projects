@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercice</title>
+
+</head>
+
+<body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        // function LoginForm() {
+        //     const [showPassword, setShowPassword] = React.useState(false);
+
+        //     function toggleShowPassword() {
+        //         setShowPassword(!showPassword);
+        //     }
+
+        //     return (
+        //         <>
+        //             <div><input className="login-input" type="text" placeholder="Email" /></div>
+
+        //             <div>
+        //                 <input className="login-input" type={
+        //                     showPassword ? 'text' : 'password'
+        //                 } placeholder="password" />
+
+        //                 <button className="hide-button" type="button" onClick={toggleShowPassword}>
+        //                     {showPassword ? 'Hide' : 'Show'}
+        //                 </button>
+
+        //             </div>
+
+        //             <button className="login-button">Login</button>
+        //             <button className="login-button">Sign up</button>
+        //         </>
+        //     );
+        // }
+
+        function App() {
+
+            const [Time, setTime] = React.useState(
+                dayjs().format('HH:mm:ss')
+            )
+
+            React.useEffect(() => {
+                setInterval(() => {
+                    console.log('run code')
+                    setTime(dayjs().format('HH:mm:ss'));
+                }, 1000);
+            }, []);
+            return (
+                <>
+                <p>current time : {Time}</p>
+                </>
+            );
+        }
+
+        const container = document.querySelector('.js-container');
+        ReactDOM.createRoot(container).render(<App />);
+    </script>
+</body>
+
+</html>
