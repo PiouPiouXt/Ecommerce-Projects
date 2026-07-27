@@ -9,12 +9,12 @@ export function HomePage() {
 
   //use useEffect to with [] dependacy array to only load the data fetching once 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/products')
+    axios.get('/api/products')
       .then((response) => {
         setProducts(response.data);
       });
 
-    axios.get('http://localhost:3000/api/cart-items')
+    axios.get('/api/cart-items')
       .then((response) => {
         setCart(response.data);
       })
