@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
 import './HomePage.css';
 
-export function HomePage() {
+export function HomePage( {cart} ) {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
@@ -24,7 +24,7 @@ export function HomePage() {
     <>
       <title>Ecommerce Project</title>
 
-      <Header cart={cart}/>
+      <Header cart={cart} />
       <div className="home-page">
         <div className="products-grid">
           {products.map((product) => {
