@@ -5,7 +5,7 @@ import './HomePage.css';
 
 export function HomePage( {cart} ) {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  
 
   //use useEffect to with [] dependacy array to only load the data fetching once 
   useEffect(() => {
@@ -13,11 +13,6 @@ export function HomePage( {cart} ) {
       .then((response) => {
         setProducts(response.data);
       });
-
-    axios.get('/api/cart-items')
-      .then((response) => {
-        setCart(response.data);
-      })
   }, []);
 
   return (
