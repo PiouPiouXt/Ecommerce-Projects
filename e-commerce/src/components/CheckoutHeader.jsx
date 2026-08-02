@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import '../pages/CheckoutHeader.css';
+import '../pages/checkout/CheckoutHeader.css';
 
 export function CheckoutHeader() {
   return (
