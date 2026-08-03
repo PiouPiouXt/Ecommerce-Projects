@@ -2,18 +2,13 @@ import dayjs from "dayjs";
 import { formatMoney } from "../../utils/money";
 import { DeliveryOptions } from "./DeliveryOptions";
 
-export function OrderSummary({ cart = [], deliveryOptions = [] }) {
-  if (!Array.isArray(cart) || !Array.isArray(deliveryOptions)) {
-    console.error('OrderSummary requires valid "cart" and "deliveryOptions" props.');
-    return null;
-  }
-
+export function OrderSummary( {cart, deliveryOptions }) {
   return (
     <div className="order-summary">
-      {deliveryOptions.length > 0 && cart.length > 0 && cart.map((cartItem) => {
+      {deliveryOptions.length > 0 && cart?.length > 0 && cart.map((cartItem) => {
         const selectedDeliveryOption = deliveryOptions
-          .find((deliveryOption) => {
-            return deliveryOption.id === cartItem.deliveryOptionId;
+          .find((deliveryOptions) => {
+            return deliveryOptions.id === cartItem.deliveryOptionId;
           });
 
 
