@@ -12,7 +12,8 @@ export function OrdersPage({ cart }) {
   useEffect(() => {
     const fetchOrdersData = async () => {
       const response = await axios.get('/api/orders?expand=products')
-      setOrders(response.data);
+      // defer state update to avoid synchronous setState inside effect
+      setTimeout(() => setOrders(response.data), 0);
     };
     fetchOrdersData();
 

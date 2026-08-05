@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import '../pages/checkout/CheckoutHeader.css';
 
 export function CheckoutHeader() {
