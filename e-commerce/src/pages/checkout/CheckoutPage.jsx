@@ -6,6 +6,8 @@ import { PaymentSummary } from './PaymentSummary';
 import './CheckoutHeader.css';
 import './CheckoutPage.css';
 
+window.axios = axios; //default value according to the backend
+
 export function CheckoutPage({ cart = [], loadCart }) {
   const [checkoutData, setCheckoutData] = useState({
     deliveryOptions: [],
@@ -41,8 +43,8 @@ export function CheckoutPage({ cart = [], loadCart }) {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-          <OrderSummary cart={cart} deliveryOptions={checkoutData.deliveryOptions} loadCart={loadCart}/>
-          <PaymentSummary paymentSummary={checkoutData.paymentSummary} loadCart={loadCart}/>
+          <OrderSummary cart={cart} deliveryOptions={checkoutData.deliveryOptions} loadCart={loadCart} />
+          <PaymentSummary paymentSummary={checkoutData.paymentSummary} loadCart={loadCart} />
         </div>
       </div>
     </>

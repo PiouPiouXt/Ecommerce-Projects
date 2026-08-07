@@ -18,6 +18,9 @@ function App() {
     setTimeout(() => setCart(response.data), 0);
   };
 
+
+
+
   useEffect(() => {
     loadCart();
   }, [])
@@ -26,7 +29,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage cart={cart} loadCart={loadCart} />} />
-        <Route path="checkout" element={<CheckoutPage cart={cart} loadCart={loadCart}/>} />
+        <Route path="checkout" element={<CheckoutPage cart={cart} loadCart={loadCart} />} />
         <Route path="orders" element={<OrdersPage cart={cart} />} />
         <Route path="tracking" element={<TrackingPage />} />
       </Routes>

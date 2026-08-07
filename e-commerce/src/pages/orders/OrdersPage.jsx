@@ -6,8 +6,10 @@ import { OrdersDetails } from './OrdersDetails';
 import './OrdersPage.css';
 
 
-export function OrdersPage({ cart }) {
+export function OrdersPage({ cart, loadCart }) {
   const [orders, setOrders] = useState([]);
+
+  
 
   useEffect(() => {
     const fetchOrdersData = async () => {
@@ -32,7 +34,7 @@ export function OrdersPage({ cart }) {
             return (
               <div key={order.id} className="order-container">
                 <OrdersHeader order={order} />
-                <OrdersDetails order={order} Fragment={Fragment} />
+                <OrdersDetails order={order} Fragment={Fragment} loadCart={loadCart}/>
               </div>
             );
           })}
