@@ -119,6 +119,13 @@
   margin-left: 3px;
 }
 
+.input-quantity-label {
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  outline:none; 
+}
+
 @media (max-width: 1000px) {
   .checkout-page .delivery-options {
     /* grid-column: 1 means this element will be placed
