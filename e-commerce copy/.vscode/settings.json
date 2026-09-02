@@ -1,0 +1,5 @@
+{
+  "javascript.validate.enable": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true
+}
