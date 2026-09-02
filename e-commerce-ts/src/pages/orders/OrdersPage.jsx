@@ -6,10 +6,8 @@ import { OrdersDetails } from './OrdersDetails';
 import './OrdersPage.css';
 
 
-export function OrdersPage({ cart, loadCart }) {
+export function OrdersPage({ cart, loadCart } ) {
   const [orders, setOrders] = useState([]);
-
-  
 
   useEffect(() => {
     const fetchOrdersData = async () => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink, useNavigate,useSearchParams } from 'react-router-dom';
+import { NavLink, useNavigate,useSearchParams } from 'react-router-dom';
 import './Header.css';
 
 type HeaderProps = {
